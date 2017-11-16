@@ -14,15 +14,20 @@
     </head>
     <body>
         <div class="container" ng-controller="movieCtrl">
-          <h1>Actors in The Star Wars</h1>
+          <h1 style="text-align: center; margin-bottom: 2em;"> Actors in The Star Wars</h1>
+          Search: <input type="search" ng-model="query"/>
+          Order By: <select ng-model="orderProp">
+                <option value="fmane">First Name</option>
+                <option value="lname">Last Name</option>
+              </select>
             <div class="row">
         
-            <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" ng-repeat="actor in actors">
+            <div style="margin-bottom: 2em;" class="col-xs-12 col-sm-3 col-md-3 col-lg-3" ng-repeat="actor in actors | filter : query | orderProp : true">
            
              
               <a href="{{actor.href}}" target="_blank">
-              <img class="img-responsive" src="{{actor.image}}" alt="Image"></a>
-                 <p><b>{{actor.fname + actor.lname}}</b></p>
+              <img class="img-responsive" ng-src="{{actor.image}}" alt="Image"></a>
+                 <p style="text-align: center;"><b>{{actor.fname + actor.lname}}</b></p>
 
                 
           
