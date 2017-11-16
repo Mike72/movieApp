@@ -14,15 +14,15 @@
     </head>
     <body>
         <div class="container" ng-controller="movieCtrl">
-          <h1>Actors</h1>
+          <h1>Actors in The Star Wars</h1>
             <div class="row">
         
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" ng-repeat="actor in actors">
            
-              <p>{{actor.fname + actor.lname}}</p>
+             
               <a href="{{actor.href}}" target="_blank">
               <img class="img-responsive" src="{{actor.image}}" alt="Image"></a>
-           
+                 <p><b>{{actor.fname + actor.lname}}</b></p>
           
             </div>
             
