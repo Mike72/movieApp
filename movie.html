@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="movieApp">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-        <script src="app.js"></script>
-        <script src="movieCtrl.js"></script>
-    </head>
-    <body>
-        <div class="container" ng-controller="movieCtrl">
-          <h1 style="text-align: center; margin-bottom: 2em;"> Actors in The Star Wars</h1>
-          Search: <input type="search" ng-model="query"/>
-          Order By: <select ng-model="orderProp">
-                <option value="fmane">First Name</option>
-                <option value="lname">Last Name</option>
-              </select>
-            <div class="row">
-        
-            <div style="margin-bottom: 2em;" class="col-xs-12 col-sm-3 col-md-3 col-lg-3" ng-repeat="actor in actors | filter : query | orderProp : true">
-           
-             
-              <a href="{{actor.href}}" target="_blank">
-              <img class="img-responsive" ng-src="{{actor.image}}" alt="Image"></a>
-                 <p style="text-align: center;"><b>{{actor.fname + actor.lname}}</b></p>
 
-                
-          
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="movieCtrl.js"></script>
+</head>
+
+<body>
+    <div class="container" ng-controller="movieCtrl">
+        <h1 style="text-align: center; margin-bottom: 2em;"> Actors in The Star Wars</h1>
+        <div style="margin: 2em;">
+        Search:
+        <input type="search" ng-model="query.fname" /> Order By:
+        <select ng-model="orderProp">
+            <option value="fname">First Name</option>
+            <option value="lname">Last Name</option>
+        </select></div>
+        <div class="row">
+
+            <div style="margin-bottom: 2em;" class="col-xs-12 col-sm-3 col-md-3 col-lg-3" ng-repeat="actor in actors | filter : query | orderBy : orderProp">
+
+
+                <a href="{{actor.href}}" target="_blank">
+                    <img class="img-responsive" ng-src="{{actor.image}}" alt="Image">
+                </a>
+                <p style="text-align: center;">
+                    <b>{{actor.fname + " " + actor.lname}}</b>
+                </p>
+
+
+
             </div>
-             <button type="button" class="btn btn-default" ng-click="addActor()">Add Actors</button>
-           
-            </div>
+            <button type="button" class="btn btn-default" ng-click="addActor()">Add Actors</button>
+
         </div>
-      </body>
-      
+    </div>
+</body>
+
 </html>
