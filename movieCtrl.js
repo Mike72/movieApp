@@ -14,5 +14,7 @@ $scope.actors = [new Actor("Daisy"," Ridley","https://images-na.ssl-images-amazo
 
 
 ];
-
+$scope.addActor = function() {
+    $scope.actors.push(new Actor("Florian", "Robin","https://images-na.ssl-images-amazon.com/images/M/MV5BMjE4MDc3MTUyOV5BMl5BanBnXkFtZTcwNTg5NzcyOQ@@._V1_UX214_CR0,0,214,317_AL_.jpg","http://www.imdb.com/name/nm1752567/?ref_=ttfc_fc_cl_t33"));
+  }
 });
