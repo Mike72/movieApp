@@ -12,6 +12,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="app.js"></script>
     <script src="movieCtrl.js"></script>
+    <script src="topMovieApp.js"></script>
+    <script src="topMovieAppCtrl.js"></script>
 </head>
 
 <body>
@@ -35,13 +37,18 @@
                 <p style="text-align: center;">
                     <b>{{actor.fname + " " + actor.lname}}</b>
                 </p>
-
+            <div>
+                <h1>Top 10 Movies</h1>
+                <a href="{{movie.mhref}}" target="_blank"><p><b>{{movie.mname}}</p></b></a>
+            </div>
 
 
             </div>
             <button type="button" class="btn btn-default" ng-click="addActor()">Add Actors</button>
 
         </div>
+       
+        
     </div>
 </body>
 

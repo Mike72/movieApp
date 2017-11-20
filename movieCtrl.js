@@ -1,7 +1,7 @@
 app.controller("movieCtrl", function($scope ,$http){
 
 //Actor Constractor
-function Actor(fname,lname,image,href){
+function Actor(fname,lname,image,href,topMovie){
     this.fname = fname;
     this.lname = lname;
     this.image = image;
