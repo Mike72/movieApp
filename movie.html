@@ -12,20 +12,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="app.js"></script>
     <script src="movieCtrl.js"></script>
-    <script src="topMovieApp.js"></script>
-    <script src="topMovieAppCtrl.js"></script>
+    <script src="toptenCtrl.js"></script>
+    <script src="toptenDirective.js"></script>
 </head>
 
 <body>
     <div class="container" ng-controller="movieCtrl">
         <h1 style="text-align: center; margin-bottom: 2em;"> Actors in The Star Wars</h1>
         <div style="margin: 2em;">
-        Search:
-        <input type="search" ng-model="query.fname" /> Order By:
-        <select ng-model="orderProp">
-            <option value="fname">First Name</option>
-            <option value="lname">Last Name</option>
-        </select></div>
+            Search:
+            <input type="search" ng-model="query.fname" /> Order By:
+            <select ng-model="orderProp">
+                <option value="fname">First Name</option>
+                <option value="lname">Last Name</option>
+            </select>
+        </div>
         <div class="row">
 
             <div style="margin-bottom: 2em;" class="col-xs-12 col-sm-3 col-md-3 col-lg-3" ng-repeat="actor in actors | filter : query | orderBy : orderProp">
@@ -37,19 +38,16 @@
                 <p style="text-align: center;">
                     <b>{{actor.fname + " " + actor.lname}}</b>
                 </p>
-            <div>
-                <h1>Top 10 Movies</h1>
-                <a href="{{movie.mhref}}" target="_blank"><p><b>{{movie.mname}}</p></b></a>
-            </div>
-
-
-            </div>
             <button type="button" class="btn btn-default" ng-click="addActor()">Add Actors</button>
-
         </div>
-       
-        
-    </div>
+        <div ng-controller="toptenCtrl">
+            <h1>Top 10 Movies</h1>{{5+3}}
+            <ul>
+               <!-- <li ng-repeat="topten in toptens">{{topten.mname}} {{topten.mhref}}</li>-->
+                <topten ng-repeat="topten in toptens"></topten>
+            </ul>
+        </div>
+
 </body>
 
 </html>

@@ -1,6 +1,6 @@
-myApp.controller("topMovieAppCtrl", function($scope ,$http){
+app.controller("toptenCtrl", function($scope){
     
-    //Actor Constractor
+  /*  //Actor Constractor
     function Movie(mname,mhref){
         this.mname = mname;
         this.mhref = mhref;
@@ -16,11 +16,15 @@ $scope.movies = [];
         alert("error" + JSON.stringify(response.status));
       })
 
-
-
-
-
-
-
-
+*/
+$scope.toptens = [{
+    mname:  "Chaos Walking",
+    mhref: "http://www.imdb.com/title/tt2076822/?ref_=nm_flmg_act_1",
+    mmail: "mike@mike.com"
+},{
+  mname: "dkhgvk.",
+  mhref:">KSDBJVK>"
+}
+]
+  
 });
