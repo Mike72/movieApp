@@ -1,7 +1,7 @@
 app.controller("movieCtrl", function($scope ,$http){
 
 //Actor Constractor
-function Actor(fname,lname,image,href,topMovie){
+function Actor(fname,lname,image,href){
     this.fname = fname;
     this.lname = lname;
     this.image = image;
@@ -31,4 +31,5 @@ $scope.addActor = function() {
   $scope.sortBy = function(prop) {
     $scope.orderProp = prop;
   }
+ 
 });
